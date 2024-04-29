@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE3186912BD84235006B52E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3186902BD84235006B52E0 /* AppDelegate.swift */; };
+		DE31869A2BD84237006B52E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3186992BD84237006B52E0 /* Assets.xcassets */; };
+		DE31869D2BD84237006B52E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE31869B2BD84237006B52E0 /* LaunchScreen.storyboard */; };
+		DE3186A62BD8435F006B52E0 /* StationsInformationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3186A52BD8435F006B52E0 /* StationsInformationData.swift */; };
+		DE3186A82BD8436D006B52E0 /* StationStatusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3186A72BD8436D006B52E0 /* StationStatusData.swift */; };
+		DE3186AB2BD84602006B52E0 /* StationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3186AA2BD84602006B52E0 /* StationService.swift */; };
+		DE3186AE2BD84746006B52E0 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3186AD2BD84746006B52E0 /* ApiConstants.swift */; };
+		DE80ABE32BDD8B43007892F2 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80ABE22BDD8B43007892F2 /* UIColorExtension.swift */; };
+		DE80ABF22BDE7CF5007892F2 /* MapKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80ABF12BDE7CF5007892F2 /* MapKitExtension.swift */; };
+		DE80ABFA2BDE9AAF007892F2 /* StationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80ABF92BDE9AAF007892F2 /* StationView.swift */; };
+		DE80ABFD2BDEA73F007892F2 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80ABFC2BDEA73F007892F2 /* LocationService.swift */; };
+		DE80AC002BDEABFC007892F2 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = DE80ABFF2BDEABFC007892F2 /* Resolver */; };
+		DE80AC062BDEAD2E007892F2 /* ResolverExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC052BDEAD2E007892F2 /* ResolverExtension.swift */; };
+		DE80AC092BDEB409007892F2 /* GoogleMapsTileOverlay in Frameworks */ = {isa = PBXBuildFile; productRef = DE80AC082BDEB409007892F2 /* GoogleMapsTileOverlay */; };
+		DE80AC0C2BDEB51C007892F2 /* MapStyle.json in Resources */ = {isa = PBXBuildFile; fileRef = DE80AC0B2BDEB51C007892F2 /* MapStyle.json */; };
+		DE80AC0E2BDEC89E007892F2 /* BikeStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE80AC0D2BDEC89E007892F2 /* BikeStation.swift */; };
+		DE81DB582BDFC96E0019B028 /* StationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB562BDFC96E0019B028 /* StationListViewController.swift */; };
+		DE81DB592BDFC96E0019B028 /* StationListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB572BDFC96E0019B028 /* StationListViewModel.swift */; };
+		DE81DB5D2BDFC9960019B028 /* StationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB5B2BDFC9960019B028 /* StationDetailsViewModel.swift */; };
+		DE81DB5E2BDFC9960019B028 /* StationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB5C2BDFC9960019B028 /* StationDetailsViewController.swift */; };
+		DE81DB612BDFCA000019B028 /* StationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB602BDFCA000019B028 /* StationAnnotation.swift */; };
+		DE81DB632BDFCA0E0019B028 /* StationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB622BDFCA0E0019B028 /* StationAnnotationView.swift */; };
+		DE81DB652BDFCA2A0019B028 /* StationListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE81DB642BDFCA2A0019B028 /* StationListCollectionViewCell.swift */; };
+		DEAC98572BDEF4ED00870A02 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC98562BDEF4ED00870A02 /* Coordinator.swift */; };
+		DEAC985A2BDEF50800870A02 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC98592BDEF50800870A02 /* AppCoordinator.swift */; };
+		DEAC985D2BDEF66A00870A02 /* StationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEAC985C2BDEF66A00870A02 /* StationCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DEAC98552BDEEAD800870A02 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		DE31868D2BD84235006B52E0 /* TriBikes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriBikes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE3186902BD84235006B52E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DE3186992BD84237006B52E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE31869C2BD84237006B52E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DE31869E2BD84237006B52E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE3186A52BD8435F006B52E0 /* StationsInformationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationsInformationData.swift; sourceTree = "<group>"; };
+		DE3186A72BD8436D006B52E0 /* StationStatusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusData.swift; sourceTree = "<group>"; };
+		DE3186AA2BD84602006B52E0 /* StationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationService.swift; sourceTree = "<group>"; };
+		DE3186AD2BD84746006B52E0 /* ApiConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		DE80ABE22BDD8B43007892F2 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		DE80ABF12BDE7CF5007892F2 /* MapKitExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitExtension.swift; sourceTree = "<group>"; };
+		DE80ABF92BDE9AAF007892F2 /* StationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationView.swift; sourceTree = "<group>"; };
+		DE80ABFC2BDEA73F007892F2 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationService.swift; sourceTree = "<group>"; };
+		DE80AC052BDEAD2E007892F2 /* ResolverExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverExtension.swift; sourceTree = "<group>"; };
+		DE80AC0B2BDEB51C007892F2 /* MapStyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MapStyle.json; sourceTree = "<group>"; };
+		DE80AC0D2BDEC89E007892F2 /* BikeStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeStation.swift; sourceTree = "<group>"; };
+		DE81DB562BDFC96E0019B028 /* StationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationListViewController.swift; sourceTree = "<group>"; };
+		DE81DB572BDFC96E0019B028 /* StationListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationListViewModel.swift; sourceTree = "<group>"; };
+		DE81DB5B2BDFC9960019B028 /* StationDetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationDetailsViewModel.swift; sourceTree = "<group>"; };
+		DE81DB5C2BDFC9960019B028 /* StationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationDetailsViewController.swift; sourceTree = "<group>"; };
+		DE81DB602BDFCA000019B028 /* StationAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationAnnotation.swift; sourceTree = "<group>"; };
+		DE81DB622BDFCA0E0019B028 /* StationAnnotationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationAnnotationView.swift; sourceTree = "<group>"; };
+		DE81DB642BDFCA2A0019B028 /* StationListCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationListCollectionViewCell.swift; sourceTree = "<group>"; };
+		DEAC98562BDEF4ED00870A02 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DEAC98592BDEF50800870A02 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DEAC985C2BDEF66A00870A02 /* StationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationCoordinator.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE31868A2BD84235006B52E0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE80AC002BDEABFC007892F2 /* Resolver in Frameworks */,
+				DE80AC092BDEB409007892F2 /* GoogleMapsTileOverlay in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE3186842BD84235006B52E0 = {
+			isa = PBXGroup;
+			children = (
+				DE31868F2BD84235006B52E0 /* TriBikes */,
+				DE31868E2BD84235006B52E0 /* Products */,
+				DEAC98512BDEEAD800870A02 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DE31868E2BD84235006B52E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE31868D2BD84235006B52E0 /* TriBikes.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE31868F2BD84235006B52E0 /* TriBikes */ = {
+			isa = PBXGroup;
+			children = (
+				DE81DB532BDFC9270019B028 /* Controllers */,
+				DEAC98582BDEF4F400870A02 /* Coordinators */,
+				DE80ABE12BDD8B2E007892F2 /* Extensions */,
+				DE3186AC2BD84738006B52E0 /* Helpers */,
+				DE3186A42BD84330006B52E0 /* Models */,
+				DE80AC0A2BDEB4E7007892F2 /* Resources */,
+				DE3186A92BD845DE006B52E0 /* Services */,
+				DE80ABF82BDE9A89007892F2 /* Views */,
+				DE3186902BD84235006B52E0 /* AppDelegate.swift */,
+				DE31869E2BD84237006B52E0 /* Info.plist */,
+			);
+			path = TriBikes;
+			sourceTree = "<group>";
+		};
+		DE3186A42BD84330006B52E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DE3186A52BD8435F006B52E0 /* StationsInformationData.swift */,
+				DE3186A72BD8436D006B52E0 /* StationStatusData.swift */,
+				DE80AC0D2BDEC89E007892F2 /* BikeStation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DE3186A92BD845DE006B52E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DE3186AA2BD84602006B52E0 /* StationService.swift */,
+				DE80ABFC2BDEA73F007892F2 /* LocationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DE3186AC2BD84738006B52E0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DE3186AD2BD84746006B52E0 /* ApiConstants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DE80ABE12BDD8B2E007892F2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DE80ABE22BDD8B43007892F2 /* UIColorExtension.swift */,
+				DE80ABF12BDE7CF5007892F2 /* MapKitExtension.swift */,
+				DE80AC052BDEAD2E007892F2 /* ResolverExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DE80ABF82BDE9A89007892F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE80ABF92BDE9AAF007892F2 /* StationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE80AC0A2BDEB4E7007892F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE3186992BD84237006B52E0 /* Assets.xcassets */,
+				DE31869B2BD84237006B52E0 /* LaunchScreen.storyboard */,
+				DE80AC0B2BDEB51C007892F2 /* MapStyle.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		DE81DB532BDFC9270019B028 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				DE81DB552BDFC94F0019B028 /* StationDetails */,
+				DE81DB542BDFC9480019B028 /* StationList */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		DE81DB542BDFC9480019B028 /* StationList */ = {
+			isa = PBXGroup;
+			children = (
+				DE81DB5A2BDFC9780019B028 /* Cell */,
+				DE81DB562BDFC96E0019B028 /* StationListViewController.swift */,
+				DE81DB572BDFC96E0019B028 /* StationListViewModel.swift */,
+			);
+			path = StationList;
+			sourceTree = "<group>";
+		};
+		DE81DB552BDFC94F0019B028 /* StationDetails */ = {
+			isa = PBXGroup;
+			children = (
+				DE81DB5F2BDFC9F00019B028 /* AnnotationView */,
+				DE81DB5C2BDFC9960019B028 /* StationDetailsViewController.swift */,
+				DE81DB5B2BDFC9960019B028 /* StationDetailsViewModel.swift */,
+			);
+			path = StationDetails;
+			sourceTree = "<group>";
+		};
+		DE81DB5A2BDFC9780019B028 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE81DB642BDFCA2A0019B028 /* StationListCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE81DB5F2BDFC9F00019B028 /* AnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				DE81DB602BDFCA000019B028 /* StationAnnotation.swift */,
+				DE81DB622BDFCA0E0019B028 /* StationAnnotationView.swift */,
+			);
+			path = AnnotationView;
+			sourceTree = "<group>";
+		};
+		DEAC98512BDEEAD800870A02 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEAC98582BDEF4F400870A02 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				DEAC98562BDEF4ED00870A02 /* Coordinator.swift */,
+				DEAC98592BDEF50800870A02 /* AppCoordinator.swift */,
+				DEAC985C2BDEF66A00870A02 /* StationCoordinator.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DE31868C2BD84235006B52E0 /* TriBikes */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE3186A12BD84237006B52E0 /* Build configuration list for PBXNativeTarget "TriBikes" */;
+			buildPhases = (
+				DE3186892BD84235006B52E0 /* Sources */,
+				DE31868A2BD84235006B52E0 /* Frameworks */,
+				DE31868B2BD84235006B52E0 /* Resources */,
+				DEAC98552BDEEAD800870A02 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TriBikes;
+			packageProductDependencies = (
+				DE80ABFF2BDEABFC007892F2 /* Resolver */,
+				DE80AC082BDEB409007892F2 /* GoogleMapsTileOverlay */,
+			);
+			productName = TriBikes;
+			productReference = DE31868D2BD84235006B52E0 /* TriBikes.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE3186852BD84235006B52E0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					DE31868C2BD84235006B52E0 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = DE3186882BD84235006B52E0 /* Build configuration list for PBXProject "TriBikes" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DE3186842BD84235006B52E0;
+			packageReferences = (
+				DE80ABFE2BDEABFC007892F2 /* XCRemoteSwiftPackageReference "Resolver" */,
+				DE80AC072BDEB409007892F2 /* XCRemoteSwiftPackageReference "GoogleMapsTileOverlay" */,
+			);
+			productRefGroup = DE31868E2BD84235006B52E0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE31868C2BD84235006B52E0 /* TriBikes */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE31868B2BD84235006B52E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE31869D2BD84237006B52E0 /* LaunchScreen.storyboard in Resources */,
+				DE31869A2BD84237006B52E0 /* Assets.xcassets in Resources */,
+				DE80AC0C2BDEB51C007892F2 /* MapStyle.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE3186892BD84235006B52E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE80ABFA2BDE9AAF007892F2 /* StationView.swift in Sources */,
+				DE80AC0E2BDEC89E007892F2 /* BikeStation.swift in Sources */,
+				DE3186AE2BD84746006B52E0 /* ApiConstants.swift in Sources */,
+				DE3186AB2BD84602006B52E0 /* StationService.swift in Sources */,
+				DEAC985A2BDEF50800870A02 /* AppCoordinator.swift in Sources */,
+				DE80ABF22BDE7CF5007892F2 /* MapKitExtension.swift in Sources */,
+				DE80ABFD2BDEA73F007892F2 /* LocationService.swift in Sources */,
+				DE81DB612BDFCA000019B028 /* StationAnnotation.swift in Sources */,
+				DEAC985D2BDEF66A00870A02 /* StationCoordinator.swift in Sources */,
+				DE81DB5D2BDFC9960019B028 /* StationDetailsViewModel.swift in Sources */,
+				DE3186912BD84235006B52E0 /* AppDelegate.swift in Sources */,
+				DE81DB652BDFCA2A0019B028 /* StationListCollectionViewCell.swift in Sources */,
+				DEAC98572BDEF4ED00870A02 /* Coordinator.swift in Sources */,
+				DE3186A82BD8436D006B52E0 /* StationStatusData.swift in Sources */,
+				DE81DB582BDFC96E0019B028 /* StationListViewController.swift in Sources */,
+				DE81DB632BDFCA0E0019B028 /* StationAnnotationView.swift in Sources */,
+				DE80AC062BDEAD2E007892F2 /* ResolverExtension.swift in Sources */,
+				DE81DB5E2BDFC9960019B028 /* StationDetailsViewController.swift in Sources */,
+				DE80ABE32BDD8B43007892F2 /* UIColorExtension.swift in Sources */,
+				DE3186A62BD8435F006B52E0 /* StationsInformationData.swift in Sources */,
+				DE81DB592BDFC96E0019B028 /* StationListViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DE31869B2BD84237006B52E0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DE31869C2BD84237006B52E0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DE31869F2BD84237006B52E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE3186A02BD84237006B52E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DE3186A22BD84237006B52E0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TriBikes/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App need your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App need your location";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roman.matusewicz.TriBikes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		DE3186A32BD84237006B52E0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TriBikes/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "App need your location.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "App need your location";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.roman.matusewicz.TriBikes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE3186882BD84235006B52E0 /* Build configuration list for PBXProject "TriBikes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE31869F2BD84237006B52E0 /* Debug */,
+				DE3186A02BD84237006B52E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE3186A12BD84237006B52E0 /* Build configuration list for PBXNativeTarget "TriBikes" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE3186A22BD84237006B52E0 /* Debug */,
+				DE3186A32BD84237006B52E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE80ABFE2BDEABFC007892F2 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.1;
+			};
+		};
+		DE80AC072BDEB409007892F2 /* XCRemoteSwiftPackageReference "GoogleMapsTileOverlay" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thepeaklab/GoogleMapsTileOverlay";
+			requirement = {
+				kind = exactVersion;
+				version = 0.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DE80ABFF2BDEABFC007892F2 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE80ABFE2BDEABFC007892F2 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		DE80AC082BDEB409007892F2 /* GoogleMapsTileOverlay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE80AC072BDEB409007892F2 /* XCRemoteSwiftPackageReference "GoogleMapsTileOverlay" */;
+			productName = GoogleMapsTileOverlay;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = DE3186852BD84235006B52E0 /* Project object */;
+}
