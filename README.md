@@ -1,3 +1,3 @@
 TriBikes
 
-MVVM + Coordinator
+MVVM + Coordinator, Unit tests
