@@ -9,7 +9,8 @@ import Resolver
 
 extension Resolver: ResolverRegistering {
     public static func registerAllServices() {
-        register { StationService() as StationServiceProtocol }
+        let networkManager = NetworkManager()
+        register { StationService(networkManager: networkManager) as StationServiceProtocol }
         register { LocationService() as LocationServiceProtocol }
     }
 }
