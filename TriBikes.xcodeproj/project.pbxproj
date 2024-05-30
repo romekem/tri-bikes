@@ -38,6 +38,12 @@
 		DEDAC85A2C0651A8003368A0 /* JsonLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC8592C0651A8003368A0 /* JsonLoader.swift */; };
 		DEDAC85C2C0651FB003368A0 /* StationStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC85B2C0651FB003368A0 /* StationStatusTests.swift */; };
 		DEDAC85E2C065FC3003368A0 /* StationInformationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC85D2C065FC3003368A0 /* StationInformationTests.swift */; };
+		DEDAC8632C0678FB003368A0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC8622C0678FB003368A0 /* NetworkManager.swift */; };
+		DEDAC8662C067A52003368A0 /* StationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC8652C067A52003368A0 /* StationServiceTests.swift */; };
+		DEDAC8692C067A9A003368A0 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC8682C067A9A003368A0 /* MockNetworkManager.swift */; };
+		DEDAC86B2C067AB2003368A0 /* MockStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC86A2C067AB2003368A0 /* MockStationService.swift */; };
+		DEDAC86D2C067AC6003368A0 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC86C2C067AC6003368A0 /* MockLocationService.swift */; };
+		DEDAC86F2C092140003368A0 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC86E2C092140003368A0 /* LocationServiceTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +102,12 @@
 		DEDAC8592C0651A8003368A0 /* JsonLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonLoader.swift; sourceTree = "<group>"; };
 		DEDAC85B2C0651FB003368A0 /* StationStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationStatusTests.swift; sourceTree = "<group>"; };
 		DEDAC85D2C065FC3003368A0 /* StationInformationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationInformationTests.swift; sourceTree = "<group>"; };
+		DEDAC8622C0678FB003368A0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DEDAC8652C067A52003368A0 /* StationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationServiceTests.swift; sourceTree = "<group>"; };
+		DEDAC8682C067A9A003368A0 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		DEDAC86A2C067AB2003368A0 /* MockStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStationService.swift; sourceTree = "<group>"; };
+		DEDAC86C2C067AC6003368A0 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
+		DEDAC86E2C092140003368A0 /* LocationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +181,7 @@
 			children = (
 				DE3186AA2BD84602006B52E0 /* StationService.swift */,
 				DE80ABFC2BDEA73F007892F2 /* LocationService.swift */,
+				DEDAC8622C0678FB003368A0 /* NetworkManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -277,6 +290,7 @@
 			children = (
 				DEDAC8592C0651A8003368A0 /* JsonLoader.swift */,
 				DEDAC8532C06517D003368A0 /* Data */,
+				DEDAC8642C067A0C003368A0 /* Services */,
 			);
 			path = TriBikesTests;
 			sourceTree = "<group>";
@@ -296,6 +310,26 @@
 			children = (
 				DEDAC8562C065198003368A0 /* station_information.json */,
 				DEDAC8552C065198003368A0 /* station_status.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DEDAC8642C067A0C003368A0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DEDAC8672C067A89003368A0 /* Mocks */,
+				DEDAC86E2C092140003368A0 /* LocationServiceTests.swift */,
+				DEDAC8652C067A52003368A0 /* StationServiceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DEDAC8672C067A89003368A0 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				DEDAC8682C067A9A003368A0 /* MockNetworkManager.swift */,
+				DEDAC86A2C067AB2003368A0 /* MockStationService.swift */,
+				DEDAC86C2C067AC6003368A0 /* MockLocationService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -417,6 +451,7 @@
 				DE80AC0E2BDEC89E007892F2 /* BikeStation.swift in Sources */,
 				DE3186AE2BD84746006B52E0 /* ApiConstants.swift in Sources */,
 				DE3186AB2BD84602006B52E0 /* StationService.swift in Sources */,
+				DEDAC8632C0678FB003368A0 /* NetworkManager.swift in Sources */,
 				DEAC985A2BDEF50800870A02 /* AppCoordinator.swift in Sources */,
 				DE80ABF22BDE7CF5007892F2 /* MapKitExtension.swift in Sources */,
 				DE80ABFD2BDEA73F007892F2 /* LocationService.swift in Sources */,
@@ -441,9 +476,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEDAC86D2C067AC6003368A0 /* MockLocationService.swift in Sources */,
 				DEDAC85C2C0651FB003368A0 /* StationStatusTests.swift in Sources */,
+				DEDAC86F2C092140003368A0 /* LocationServiceTests.swift in Sources */,
 				DEDAC85E2C065FC3003368A0 /* StationInformationTests.swift in Sources */,
+				DEDAC86B2C067AB2003368A0 /* MockStationService.swift in Sources */,
+				DEDAC8662C067A52003368A0 /* StationServiceTests.swift in Sources */,
 				DEDAC85A2C0651A8003368A0 /* JsonLoader.swift in Sources */,
+				DEDAC8692C067A9A003368A0 /* MockNetworkManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
