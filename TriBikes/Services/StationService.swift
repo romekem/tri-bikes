@@ -14,26 +14,23 @@ protocol StationServiceProtocol {
 }
 
 class StationService: StationServiceProtocol {
-    private let urlSession = URLSession.shared
-    private let jsonDecoder = JSONDecoder()
+    private let networkManager: NetworkManagerProtocol
+
+    init(networkManager: NetworkManagerProtocol) {
+        self.networkManager = networkManager
+    }
 
     func fetchStationsInfo() -> AnyPublisher<StationsInformationData,Error> {
         guard let url = URL(string: ApiConstants.informationUrl) else {
             return Fail(error: NetworkError.missingUrl).eraseToAnyPublisher()
         }
-        return urlSession.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: StationsInformationData.self, decoder: jsonDecoder)
-            .eraseToAnyPublisher()
+        return networkManager.fetchData(for: url, type: StationsInformationData.self)
     }
 
     func fetchStationsStatus() -> AnyPublisher<StationsStatusData, Error> {
         guard let url = URL(string: ApiConstants.statusUrl) else {
             return Fail(error: NetworkError.missingUrl).eraseToAnyPublisher()
         }
-        return urlSession.dataTaskPublisher(for: url)
-            .map { $0.data }
-            .decode(type: StationsStatusData.self, decoder: jsonDecoder)
-            .eraseToAnyPublisher()
+        return networkManager.fetchData(for: url, type: StationsStatusData.self)
     }
 }
