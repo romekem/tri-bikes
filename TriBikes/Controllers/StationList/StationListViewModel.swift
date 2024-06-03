@@ -37,17 +37,22 @@ final class StationListViewModel {
             } receiveValue: { [weak self] infoData, statusData in
                 let infoStations = infoData.data.stations
                 let stationsStatus = statusData.data.stations
+
                 
                 self?.stations = infoStations.compactMap { info in
                     guard let status = stationsStatus.first(where: { $0.stationID == info.stationID }) else { return nil }
                     return BikeStation(information: info, status: status)
+                }
+
+                if !infoStations.isEmpty, !stationsStatus.isEmpty {
+                    self?.requestUserLocation()
                 }
             }
             .store(in: &cancellables)
 
     }
 
-    func requestUserLocation() {
+    private func requestUserLocation() {
         locationService.checkLocationAuthorization()
     }
 
