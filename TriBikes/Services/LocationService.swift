@@ -36,7 +36,7 @@ class LocationService: NSObject, LocationServiceProtocol {
         case .restricted:
             print("Location is restricted.")
         case .denied:
-            print("Location permission denied.")
+            print("Location is denied.")
         case .authorizedAlways, .authorizedWhenInUse:
             currentLocationPublished = locationManager.location
         default:

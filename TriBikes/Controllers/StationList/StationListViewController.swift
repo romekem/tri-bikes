@@ -46,7 +46,6 @@ final class StationListViewController: UIViewController {
         addSubviews()
         setupConstraints()
         
-        viewModel.requestUserLocation()
         viewModel.fetchData()
     }
 

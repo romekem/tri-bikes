@@ -44,6 +44,8 @@
 		DEDAC86B2C067AB2003368A0 /* MockStationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC86A2C067AB2003368A0 /* MockStationService.swift */; };
 		DEDAC86D2C067AC6003368A0 /* MockLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC86C2C067AC6003368A0 /* MockLocationService.swift */; };
 		DEDAC86F2C092140003368A0 /* LocationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC86E2C092140003368A0 /* LocationServiceTests.swift */; };
+		DEDAC8722C092B85003368A0 /* StationListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC8712C092B85003368A0 /* StationListViewModelTests.swift */; };
+		DEDAC8752C092ECA003368A0 /* ResolverExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDAC8742C092ECA003368A0 /* ResolverExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,8 @@
 		DEDAC86A2C067AB2003368A0 /* MockStationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockStationService.swift; sourceTree = "<group>"; };
 		DEDAC86C2C067AC6003368A0 /* MockLocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationService.swift; sourceTree = "<group>"; };
 		DEDAC86E2C092140003368A0 /* LocationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceTests.swift; sourceTree = "<group>"; };
+		DEDAC8712C092B85003368A0 /* StationListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StationListViewModelTests.swift; sourceTree = "<group>"; };
+		DEDAC8742C092ECA003368A0 /* ResolverExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResolverExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +294,9 @@
 			children = (
 				DEDAC8592C0651A8003368A0 /* JsonLoader.swift */,
 				DEDAC8532C06517D003368A0 /* Data */,
+				DEDAC8732C092E92003368A0 /* Extenions */,
 				DEDAC8642C067A0C003368A0 /* Services */,
+				DEDAC8702C092B14003368A0 /* ViewModels */,
 			);
 			path = TriBikesTests;
 			sourceTree = "<group>";
@@ -332,6 +338,22 @@
 				DEDAC86C2C067AC6003368A0 /* MockLocationService.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		DEDAC8702C092B14003368A0 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DEDAC8712C092B85003368A0 /* StationListViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DEDAC8732C092E92003368A0 /* Extenions */ = {
+			isa = PBXGroup;
+			children = (
+				DEDAC8742C092ECA003368A0 /* ResolverExtension.swift */,
+			);
+			path = Extenions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,7 +501,9 @@
 				DEDAC86D2C067AC6003368A0 /* MockLocationService.swift in Sources */,
 				DEDAC85C2C0651FB003368A0 /* StationStatusTests.swift in Sources */,
 				DEDAC86F2C092140003368A0 /* LocationServiceTests.swift in Sources */,
+				DEDAC8722C092B85003368A0 /* StationListViewModelTests.swift in Sources */,
 				DEDAC85E2C065FC3003368A0 /* StationInformationTests.swift in Sources */,
+				DEDAC8752C092ECA003368A0 /* ResolverExtension.swift in Sources */,
 				DEDAC86B2C067AB2003368A0 /* MockStationService.swift in Sources */,
 				DEDAC8662C067A52003368A0 /* StationServiceTests.swift in Sources */,
 				DEDAC85A2C0651A8003368A0 /* JsonLoader.swift in Sources */,

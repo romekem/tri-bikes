@@ -29,10 +29,10 @@ class MockStationService: StationServiceProtocol {
     func fetchStationsStatus() -> AnyPublisher<StationsStatusData, any Error> {
         do {
             guard let data = try? JsonLoader.load(file: "station_status"),
-                  let stationInfo = try? JSONDecoder().decode(StationsStatusData.self, from: data) else {
+                  let stationStatus = try? JSONDecoder().decode(StationsStatusData.self, from: data) else {
                 throw MockError.parsingError
             }
-            return Just(stationInfo)
+            return Just(stationStatus)
                 .setFailureType(to: Error.self)
                 .eraseToAnyPublisher()
         }
