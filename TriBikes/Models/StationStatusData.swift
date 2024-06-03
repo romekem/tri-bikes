@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - StationStatusData
-struct StationsStatusData: Codable {
+public struct StationsStatusData: Codable {
     let lastUpdated, ttl: Int
     let version: String
     let data: StatusData
@@ -20,12 +20,12 @@ struct StationsStatusData: Codable {
 }
 
 // MARK: - DataClass
-struct StatusData: Codable {
+public struct StatusData: Codable {
     let stations: [StationStatus]
 }
 
 // MARK: - Station
-struct StationStatus: Codable {
+public struct StationStatus: Codable, Hashable {
     let stationID: String
     let isInstalled, isRenting, isReturning: Bool
     let lastReported, numVehiclesAvailable, numBikesAvailable, numDocksAvailable: Int
@@ -45,7 +45,7 @@ struct StationStatus: Codable {
 }
 
 // MARK: - VehicleTypesAvailable
-struct VehicleTypesAvailable: Codable {
+public struct VehicleTypesAvailable: Codable, Hashable {
     let vehicleTypeID: VehicleTypeID
     let count: Int
 
@@ -55,7 +55,7 @@ struct VehicleTypesAvailable: Codable {
     }
 }
 
-enum VehicleTypeID: String, Codable {
+public enum VehicleTypeID: String, Codable {
     case bike = "bike"
     case ebike = "ebike"
 }

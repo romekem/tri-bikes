@@ -15,14 +15,15 @@ final class StationDetailsViewController: UIViewController {
         static let cornerRadius: CGFloat = 16
     }
 
-    private let mapView: MKMapView = MKMapView()
-    private let stationView: StationView = StationView()
-    private let viewModel: StationDetailsViewModel
     private var cancellables = Set<AnyCancellable>()
 
     private var stationLocation: CLLocation {
         CLLocation(latitude: viewModel.station.information.lat, longitude: viewModel.station.information.lon)
     }
+
+    private let mapView: MKMapView = MKMapView()
+    private let stationView: StationView = StationView()
+    private let viewModel: StationDetailsViewModel
 
     init(viewModel: StationDetailsViewModel) {
         self.viewModel = viewModel

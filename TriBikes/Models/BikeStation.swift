@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BikeStation {
+struct BikeStation: Hashable {
     let information: StationInformation
     let status: StationStatus
     var distance: Int?

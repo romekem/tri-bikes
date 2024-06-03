@@ -22,12 +22,28 @@ final class StationListViewController: UIViewController {
         static let cellHeight: CGFloat = 208
     }
 
-    weak var delegate: StationListViewControllerDelegate?
+    private enum Section {
+        case main
+    }
 
-    private let viewModel: StationListViewModel
+    private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<Section, BikeStation>
+
+    weak var delegate: StationListViewControllerDelegate?
 
     private lazy var colectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
     private var cancellables = Set<AnyCancellable>()
+
+    private lazy var dataSource: UICollectionViewDiffableDataSource<Section, BikeStation> = {
+        UICollectionViewDiffableDataSource(collectionView: colectionView) { collectionView, indexPath, itemIdentifier in
+            guard let cell: StationListCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: StationListCollectionViewCell.reuseIdentifier, for: indexPath) as? StationListCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.updateView(station: itemIdentifier)
+            return cell
+        }
+    }()
+
+    private let viewModel: StationListViewModel
 
     init(viewModel: StationListViewModel) {
         self.viewModel = viewModel
@@ -52,8 +68,8 @@ final class StationListViewController: UIViewController {
     private func bind() {
         viewModel.$stations
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] _ in
-                self?.colectionView.reloadData()
+            .sink { [weak self] stations in
+                self?.applySnapshot(items: stations)
             }
             .store(in: &cancellables)
 
@@ -85,7 +101,6 @@ final class StationListViewController: UIViewController {
         colectionView.register(StationListCollectionViewCell.self, forCellWithReuseIdentifier: StationListCollectionViewCell.reuseIdentifier)
         colectionView.backgroundColor = .systemGray6
         colectionView.delegate = self
-        colectionView.dataSource = self
     }
 
     private func createLayout() -> UICollectionViewCompositionalLayout {
@@ -111,19 +126,12 @@ final class StationListViewController: UIViewController {
             return section
         }
     }
-}
 
-extension StationListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.stations.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: StationListCollectionViewCell.reuseIdentifier, for: indexPath) as? StationListCollectionViewCell else {
-            return UICollectionViewCell()
-        }
-        cell.updateView(station: viewModel.stations[indexPath.row])
-        return cell
+    private func applySnapshot(items: [BikeStation]) {
+        var snapshot = DataSourceSnapshot()
+        snapshot.appendSections([.main])
+        snapshot.appendItems(items, toSection: .main)
+        dataSource.applySnapshotUsingReloadData(snapshot)
     }
 }
 

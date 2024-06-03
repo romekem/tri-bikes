@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - StationInformation
-struct StationsInformationData: Codable {
+public struct StationsInformationData: Codable {
     let lastUpdated, ttl: Int
     let version: String
     let data: InformationData
@@ -20,12 +20,12 @@ struct StationsInformationData: Codable {
 }
 
 // MARK: - DataClass
-struct InformationData: Codable {
+public struct InformationData: Codable {
     let stations: [StationInformation]
 }
 
 // MARK: - Station
-struct StationInformation: Codable {
+public struct StationInformation: Codable, Hashable {
     let stationID, name, address, crossStreet: String
     let lat, lon: Double
     let isVirtualStation: Bool
@@ -46,12 +46,12 @@ struct StationInformation: Codable {
 }
 
 // MARK: - RentalUris
-struct RentalUris: Codable {
+public struct RentalUris: Codable, Hashable {
     let android, ios: String
 }
 
 // MARK: - StationArea
-struct StationArea: Codable {
+public struct StationArea: Codable, Hashable {
     let type: TypeEnum
     let coordinates: [[[[Double]]]]
 }
